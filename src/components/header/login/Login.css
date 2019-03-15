@@ -5,24 +5,27 @@
 
 .action-icon {
     width: 40%;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 15px;
 }
 
 .action-button {
     display: flex;
     width: 60%;
     border-left: 1px solid #eee;
-    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .item-button {
     width: 150px;
     background: none;
     border: none;
-    color: blue;
+    color: #0283df;
     font-size: 18px;
 }
 
 .item-button-left {
-    border: 1px solid #eee;
+    border: 1px solid #0283df;
     border-radius: 5px;
-}   
+}

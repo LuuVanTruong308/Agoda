@@ -6,9 +6,8 @@
 }
 
 .bachground-logo {
-    height: 40px;
-    width: 13%;
-    padding-right: 20px;
+    height: 35px;
+    width: 10%;
     border-right: 1px solid #eee;
     cursor: pointer;
 }
@@ -26,6 +25,7 @@
     font-weight: 600;
     margin: 10px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .item:hover {

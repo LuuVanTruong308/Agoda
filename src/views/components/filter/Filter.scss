@@ -1,0 +1,40 @@
+.filter {
+    /* display: flex; */
+    width: 50%;
+    margin: auto;
+    height: auto;
+    min-width: 1150px;
+
+    .filter-list-button {
+        display: flex;
+        height: 60px;
+
+        .filter-button {
+            padding: 0 70px 0 70px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+
+    .filter-list {
+        display: flex;
+        margin-top: 20px;
+
+        .filter-list-slide-bar {
+            width: 25%;
+            height: auto;
+        }
+
+        .filter-list-tab {
+            width: 70%;
+            margin-left: 10px;
+            height: 100px;
+
+            .filter-notify {
+                height: 60px;
+                background: blanchedalmond;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
