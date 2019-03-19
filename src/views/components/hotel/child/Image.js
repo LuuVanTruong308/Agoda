@@ -21,7 +21,7 @@ class Image extends Component {
         </div>
         <div className="list-image-item">
           {this.LIST_IMAGE.slice(1,this.LIST_IMAGE.length).map(item =>
-            <img src={item.imageItemProps.url}/>
+            <img src={item.imageItemProps.url} />
           )}
         </div>
       </div>

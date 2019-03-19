@@ -1,0 +1,38 @@
+.hotel-price {
+  border-left: 1px solid #ddd;
+  text-align: right;
+  width: 20%;
+
+  &-review {
+    display: flex;
+    line-height: 12px;
+
+    .text-review {
+      max-width: 110px;
+      font-size: 14px;
+      overflow-wrap: break-word;
+      font-weight: 600;
+    }
+
+    .number-review {
+      font-size: 12px;
+      font-size: 12px;
+      margin-top: -10px;
+      color: #777;
+    }
+
+    &-point {
+      background: #5392f9;
+      height: min-content;
+      margin-top: 10px;
+      padding: 0 10px 0 10px;
+      margin-left: 10px;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+
+  .hotel-price-content {
+    height: 50%;
+  }
+}

@@ -1,40 +1,46 @@
 .search {
-    width: 100%;
     display: flex;
     height: 80px;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
 
-    .search-list-item {
-        .search-item {
-            width: auto;
-            margin-left: 10px;
-            background: #e9ebee;
-            height: 30px;
-            padding: 0 20px 0 20px;
-            border-radius: 21px 20px 20px 20px;
-            text-align: center;
-            font-size: 14px;
-            position: relative;
-            outline: none;
+    &--item {
+        margin-left: 10px;
+        background: #e9ebee;
+        height: 30px;
+        border-radius: 21px 20px 20px 20px;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        outline: none;
 
-            .search-item-text {
-                margin: 0 10px 0 10px;
+        &-text {
+            margin: 0 5px 0 5px;
+        }
+    }
+
+    &item:hover {
+        color: #0283df;
+    }
+
+    @media only screen and (max-width: 1024px){
+        max-width: 992px;
+        &-item {
+            span {
+            max-width: 15px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             }
-            
         }
-
-        .search-item:hover {
-            color: #0283df;
-        }
-        
     }
 }
 
 .sort-down {
-    align-items: center;
-    position: absolute;
+    vertical-align: top;
 }
 
 .search-left {
@@ -43,11 +49,13 @@
 
 .search-icon {
     position: absolute;
-    margin: 10px 0px 0 -85px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .search-text {
-    position: inherit;
+    position: relative;
     width: 200px;
     border: 1px solid black;
     height: 35px;

@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    height: 50px;
+    padding-top: 10px;
+    margin: 0 auto;
+
+    .bachground-logo {
+        height: 35px;
+        padding: 0 40px 0 20px;
+        border-right: 1px solid #eee;
+        cursor: pointer;
+    }
+
+    .logo {
+        width: 70%;
+        display: flex;
+    }
+
+    .item {
+        width: auto;
+        border: none;
+        background: none;
+        text-align: center;
+        font-weight: 600;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .item:hover {
+        color: #0283df;
+    }
+
+    .login {
+        width: 30%;
+    }
+
+    @media only screen and (max-width: 1024px){
+        max-width: 992px;
+
+        .item {
+            margin: 5px;
+        }
+
+        .bachground-logo {
+            padding: 0 20px 0 10px;
+        }
+    }
+}

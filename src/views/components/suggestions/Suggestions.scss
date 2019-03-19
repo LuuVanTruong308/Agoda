@@ -1,0 +1,53 @@
+.suggestions {
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+    text-align: left;
+    margin-bottom: 50px;
+
+    &--text {
+        margin: 20px 0 20px 0;
+        font-weight: 500;
+    }
+
+    &--list{
+        display: flex;
+        flex-wrap: wrap;
+
+        &--item {
+            width: 255px;
+            height: 185px;
+            background-repeat: no-repeat;
+            color: white;
+            margin-top: 10px;
+            margin: 5px 5px 0 0;
+            padding: 0 0 10px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            &--option {
+                border: 1px solid #fff;
+                border-radius: 3px;
+                max-width: 95%;
+                text-transform: capitalize;
+                overflow: hidden;
+                padding: 0 5px 0 5px;
+                font-weight: 400;
+                font-size: 14px;
+                margin-top: 3px;
+                display: inline-block;
+            }
+
+            &--name {
+                font-weight: 600;
+                font-size: 14px;
+                margin: 0;
+            }
+
+            &--number {
+                font-size: 10px;
+                margin: 0;
+            }
+        }
+    }
+}
