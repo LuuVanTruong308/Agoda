@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// font-awesome
 import '../node_modules/font-awesome/css/font-awesome.min.css'
+// router
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-
+// store
+import store from './redux/store';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import myReducer from './redux/reducers/index'
-
-const store = createStore(myReducer)
 
 const hist = createBrowserHistory();
 

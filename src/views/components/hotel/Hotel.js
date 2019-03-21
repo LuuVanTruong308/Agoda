@@ -13,14 +13,17 @@ class Hotel extends Component {
   }
 
   render() {
+    let { hotelModal } = this.props
     return (
       <div className="hotel">
-        <div className="hotel-noti">
-          quảng cáo
+        <div className="hotel--noti">
+          <div className="hotel--noti--mes">
+            <span>gợi ý cho bạn</span>
+          </div>
         </div>
-        <div className="hotel-item">
-          <Image></Image>
-          <HotelItemModal></HotelItemModal>
+        <div className="hotel--item">
+          <Image listImage={hotelModal.galleryContainerProps}>></Image>
+          <HotelItemModal hotelModal={hotelModal}></HotelItemModal>
           <HotelPrice></HotelPrice>
       </div>
       </div>

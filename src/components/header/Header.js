@@ -7,7 +7,11 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="logo">
-          <img src="https://cdn6.agoda.net/images/MVC/default/agoda-logo.svg" title="Agoda" className="bachground-logo"/>
+          <img 
+            src="https://cdn6.agoda.net/images/MVC/default/agoda-logo.svg"
+            title="Agoda"
+            className="bachground-logo"
+            alt=""/>
           <div>
             <button className="item">Chỗ ở</button>
             <button className="item">Chuyến bay</button>

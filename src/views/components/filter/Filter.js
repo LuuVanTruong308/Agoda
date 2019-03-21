@@ -5,6 +5,9 @@ import Hotel from '../hotel/Hotel'
 import Suggestions from '../suggestions/Suggestions'
 import { connect } from 'react-redux'
 
+// import * as actions from '../../../redux/action/content'
+import * as actionsApi from '../../../redux/api/content'
+
 class Filter extends Component {
   constructor() {
     super();
@@ -12,29 +15,40 @@ class Filter extends Component {
       filter: 1,
     }
   }
+
   render() {
-    console.log(this.props.contents)
     return (
       <div className="filter">
-        <div className="filter__list-button">
-          <button className="filter-button" onClick={() => this.actionFilter(1)}>Mọi lựa chọn</button>
-          <button className="filter-button" onClick={() => this.actionFilter(2)}>Khách sạn</button>
-          <button className="filter-button" onClick={() => this.actionFilter(3)}>Agoda home</button>
-          {/* <button className={'filter-button' + this.state.filter === 1 ? 'filter-item' : ''} onClick={() => this.actionFilter(1)}>Mọi lựa chọn</button>
-          <button className={"filter-button" + this.state.filter === 2 ? 'filter-item' : ''} onClick={() => this.actionFilter(2)}>Khách sạn</button>
-          <button className={"filter-button" + this.state.filter === 3 ? 'filter-item' : ''} onClick={() => this.actionFilter(3)}>Agoda home</button> */}
+        <div className="filter--list-button">
+          <button
+            className={`filter-button ${this.state.filter === 1 ? 'filter-item' : ''}`}
+            onClick={() => this.actionFilter(1)}>
+            Mọi lựa chọn
+          </button>
+          <button
+            className={`filter-button ${this.state.filter === 2 ? 'filter-item' : ''}`}
+            onClick={() => this.actionFilter(2)}>
+            Khách sạn
+          </button>
+          <button
+            className={`filter-button ${this.state.filter === 3 ? 'filter-item' : ''}`}
+            onClick={() => this.actionFilter(3)}>
+            Agoda home
+          </button>
         </div>
-        <div className="filter-list">
-          <div className="filter-list-slide-bar">
+        <div className="filter--list">
+          <div className="filter--list--slide-bar">
             <SlideBarLeft></SlideBarLeft>
           </div>
-          <div className="filter-list-tab">
+          <div className="filter--list--tab">
             <div className="filter-notify">
             </div>
             <div className="filter-sort">
             </div>
             <div className="filter-list-item">
-              <Hotel></Hotel>
+              { this.props.listHotel.map((item) => {
+                return  <Hotel hotelModal={item} key={item.HotelID} />
+              })}
             </div>
             <div className="filter-list-item">
               <Suggestions></Suggestions>
@@ -43,6 +57,10 @@ class Filter extends Component {
         </div>
       </div>
     );
+  }
+
+  componentWillMount() {
+    this.props.dispatchGetList()
   }
 
   actionFilter = (value) => {
@@ -54,12 +72,16 @@ class Filter extends Component {
 
 const mapStateToProps = state => {
   return {
-    contents: state.contents
+    listHotel: state.myListHotel
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   toggleTodo: id => dispatch(toggleTodo(id))
-// })
+const mapDispatchToProps = dispatch => {
+  return {
+    dispatchGetList : () => {
+      dispatch(actionsApi.getListContent())
+    }
+  }
+}
 
-export default connect(mapStateToProps, null)(Filter)
+export default connect(mapStateToProps, mapDispatchToProps)(Filter)

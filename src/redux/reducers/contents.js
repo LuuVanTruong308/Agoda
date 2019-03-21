@@ -1,15 +1,13 @@
 import * as types from '../constants/content'
 
-var initialState = {
-    count: 1,
-}
+var listHotel = []
 
-var myReducer = (state = initialState, action) => {
+var myListHotel = (state = listHotel, action) => {
     switch(action.type) {
         case types.GET_LIST:
-            return state;
+            return state = [...action.listHotel]
         default: return state
     }
 }
 
-export default myReducer
+export default myListHotel

@@ -49,6 +49,7 @@
         display: flex;
         font-size: 12px;
         padding-top: 5px;
+        position: relative;
 
         span {
             border: 1px solid #63c355;
@@ -56,6 +57,56 @@
             padding: 3px 5px 3px 5px;font-weight: 500;
             border-radius: 3px;
             margin-right: 5px;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            background: black;
+            min-width: 200px;
+            min-height: 50px;
+            color: white;
+            opacity: 0.7;
+            border-radius: 5px;
+            top: -50px;
+            padding-left: 5px;
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+
+            &:after, &:before {
+                top: 100%;
+                left: 10%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+            }
+
+            &:after {
+                border-color: rgba(136, 183, 213, 0);
+                border-top-color: black;
+                border-width: 5px;
+                margin-left: -5px;
+            }
+
+            &:before {
+                border-color: rgba(194, 225, 245, 0);
+                border-width: 10px;
+                margin-left: -10px;
+            }
+        }
+
+        &:hover .tooltip {
+            visibility: visible;
         }
     }
 

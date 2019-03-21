@@ -1,12 +1,22 @@
 .hotel {
     width: 100%;
+    margin-top: 20px;
 
-    .hotel-noti {
+    &--noti {
         text-align: left;
+        color: #fff;
+
+        &--mes {
+            background: #24457c;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px 5px 0 0;
+            display: inline-block;
+            font-size: 14px;
+        }
     }
 
-    .hotel-item {
+    &--item {
         display: flex;
-        border: 1px solid #ddd;
+        border: 1px solid #24457c;
     }
 }

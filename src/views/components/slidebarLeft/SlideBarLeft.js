@@ -17,9 +17,9 @@ class SlideBarLeft extends Component {
           <Map></Map>
         </div>
         <div>
-          {this.LIST.map(item =>
-            <div className="sideBar-list">
-              <img className="sideBar-list-img" src={item.img} />
+          {this.LIST.map((item, index) =>
+            <div className="sideBar-list" key={index}>
+              <img className="sideBar-list-img" src={item.img} alt=""/>
               <div className="sideBar-list-text">
                 <p className="sideBar-list-text-item">{item.name}</p>
                 <p>{item.number} nơi ở có phòng</p>

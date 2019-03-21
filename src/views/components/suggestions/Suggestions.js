@@ -19,12 +19,12 @@ class Suggestions extends Component {
         <div className="suggestions--text">Bạn vẫn chưa tìm được nơi phù hợp từ 20 Thg3 - 05 Thg4 2019 à? Hãy thử qua những gợi ý dưới đây!</div>
         <div className="suggestions--list">
             {this.LIST_SUGGESTIONS.map(item =>
-                <div className="suggestions--list--item" style={{ backgroundImage: `url(${item.imageUrl})` }}>
+                <div className="suggestions--list--item" style={{ backgroundImage: `url(${item.imageUrl})` }} key={item.cityId}>
                     <span className="suggestions--list--item--name">{item.mainDescription}</span>
                     <p className="suggestions--list--item--number">{item.secondaryDescription}</p>
                     <div >
-                        {item.atmospheres.map(el =>
-                            <span className="suggestions--list--item--option">{el}</span>
+                        {item.atmospheres.map((el,index) =>
+                          <span className="suggestions--list--item--option" key={index}>{el}</span>
                         )}
                     </div>
                 </div>

@@ -1,10 +1,11 @@
 .action-login {
     display: flex;
     height: 100%;
+    justify-content: flex-end;
 }
 
 .action-icon {
-    width: 40%;
+    width: 30%;
     text-align: right;
     padding-right: 20px;
     padding-top: 15px;
@@ -12,13 +13,12 @@
 
 .action-button {
     display: flex;
-    width: 60%;
     border-left: 1px solid #eee;
     margin-bottom: 10px;
 }
 
 .item-button {
-    width: 150px;
+    width: auto;
     background: none;
     border: none;
     color: #0283df;

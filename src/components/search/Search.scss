@@ -1,39 +1,58 @@
 .search {
     display: flex;
-    height: 80px;
+    height: 65px;
     text-align: center;
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
 
+    &--title {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
     &--item {
         margin-left: 10px;
-        background: #e9ebee;
+        background: #20274d;
+        color: white;
         height: 30px;
         border-radius: 21px 20px 20px 20px;
         text-align: center;
         font-size: 14px;
         position: relative;
         outline: none;
+        border: none;
 
         &-text {
             margin: 0 5px 0 5px;
         }
     }
 
-    &item:hover {
+    &--item:hover {
         color: #0283df;
     }
 
-    @media only screen and (max-width: 1024px){
-        max-width: 992px;
-        &-item {
-            span {
-            max-width: 15px;
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+    &--left {
+        margin-left: 110px;
+
+        &--text {
+            position: relative;
+            width: 230px;
+            border: 1px solid #737373;
+            height: 35px;
+            border-radius: 20px;
+            background: #f8f7f9;
+        }
+    }
+
+    @media (min-width: 992) and (max-width: 1024px){
+        &--item {
+            &-text {
+                max-width: 15px;
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     }
@@ -43,27 +62,19 @@
     vertical-align: top;
 }
 
-.search-left {
-    margin-left: 110px;
-}
-
 .search-icon {
     position: absolute;
-    left: 10px;
+    left: 7px;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.search-text {
-    position: relative;
-    width: 200px;
-    border: 1px solid black;
-    height: 35px;
-    border-radius: 20px;
+    bottom: -5px;
+    color: #737373;
 }
 
 .search-text-input {
     height: 30px;
     border: none;
     outline: none;
+    font-size: 14px;
+    background: #f8f7f9;
 }

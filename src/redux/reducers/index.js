@@ -1,9 +1,9 @@
-import contents from './contents'
-
 import { combineReducers } from 'redux'
 
+import myListHotel from './contents'
+
 const myReducer = combineReducers({
-    contents,
+    myListHotel,
 })
 
 export default myReducer

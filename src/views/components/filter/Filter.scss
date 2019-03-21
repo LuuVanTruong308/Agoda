@@ -2,7 +2,7 @@
     margin: 0 auto;
     max-width: 1110px;
 
-    &__list-button {
+    &--list-button {
         display: flex;
         height: 60px;
 
@@ -10,22 +10,34 @@
             padding: 0 70px 0 70px;
             font-weight: 600;
             font-size: 14px;
+            background: #f9f9fa;
+            border-style: #dddfe2;
+            border-width: 1px 0 1px 1px;
+            outline: none;
+        }
+
+        .filter-button:last-child {
+            border-right: 1px solid #dddfe2;
+        }
+
+        .filter-item {
             border-top: 5px solid #5392f9;
-            background: white;
-            color: black;
             border-bottom: none;
+            outline: none;
+            background: white;
+            color: #5392f9;
         }
     }
 
-    .filter-list {
+    &--list {
         display: flex;
         margin-top: 20px;
 
-        .filter-list-slide-bar {
+        &--slide-bar {
             width: 25%;
         }
 
-        .filter-list-tab {
+        &--tab {
             width: 75%;
             padding-left: 20px;
             height: 100px;

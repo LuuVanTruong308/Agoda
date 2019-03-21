@@ -14,14 +14,15 @@ class Image extends Component {
   }
 
   render() {
+    let { listImage } = this.props
     return (
       <div className="list-image">
         <div className="list-image-big">
-          <img src={this.LIST_IMAGE[0].imageItemProps.url} />
+          <img src={listImage.mainImages[0].imageItemProps.url} alt=""/>
         </div>
         <div className="list-image-item">
-          {this.LIST_IMAGE.slice(1,this.LIST_IMAGE.length).map(item =>
-            <img src={item.imageItemProps.url} />
+          {listImage.mainImages.slice(1,listImage.mainImages.length).map((item, index) =>
+            <img src={item.imageItemProps.url} key={index} alt=""/>
           )}
         </div>
       </div>

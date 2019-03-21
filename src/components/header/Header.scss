@@ -4,16 +4,16 @@
     padding-top: 10px;
     margin: 0 auto;
 
-    .bachground-logo {
-        height: 35px;
-        padding: 0 40px 0 20px;
-        border-right: 1px solid #eee;
-        cursor: pointer;
-    }
-
     .logo {
         width: 70%;
         display: flex;
+
+        .bachground-logo {
+            height: 35px;
+            padding: 0 40px 0 20px;
+            border-right: 1px solid #eee;
+            cursor: pointer;
+        }
     }
 
     .item {
@@ -35,7 +35,7 @@
         width: 30%;
     }
 
-    @media only screen and (max-width: 1024px){
+    @media (min-width: 992px) and (max-width: 1024px){
         max-width: 992px;
 
         .item {
