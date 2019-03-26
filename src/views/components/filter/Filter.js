@@ -37,7 +37,7 @@ class Filter extends Component {
           </button>
         </div>
         <div className="filter--list">
-          <div className="filter--list--slide-bar">
+          <div className="filter--list--slide-bar" id="sticky">
             <SlideBarLeft></SlideBarLeft>
           </div>
           <div className="filter--list--tab">

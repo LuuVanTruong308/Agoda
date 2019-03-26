@@ -23,9 +23,21 @@
     border: none;
     color: #0283df;
     font-size: 18px;
+    cursor: pointer;
+    outline: none;
 }
 
 .item-button-left {
     border: 1px solid #0283df;
     border-radius: 5px;
+    background-image: linear-gradient(#0283df, #0283df);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .3s, color .3s;
+}
+
+.item-button-left:hover {
+    background-size: 100% 100%;
+    color: #fff;
 }

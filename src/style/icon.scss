@@ -1,0 +1,68 @@
+@font-face {
+    font-family: fontIcon;
+    src: url('../config/icons.woff');
+}
+
+.icon::before {
+    font-family: fontIcon;
+}
+
+.ficon-star-5::before {
+    content: "\F464";
+}
+
+.ficon-star-4::before {
+    content: "\F462";
+}
+
+.ficon-star-3::before {
+    content: "\F460";
+}
+
+.ficon-star-2::before {
+    content: "\F45E";
+}
+
+.ficon-star-1::before {
+    content: "\F45C";
+}
+
+.ficon-air-conditioning::before {
+    content: "\F116";
+}
+
+.ficon-wifi::before {
+    content: "\F4C8";
+}
+
+.free-wifi-in-all-rooms::before {
+    content: "\F4C8";
+}
+
+.airport-transfer::before {
+    content: "";
+}
+
+.sauna::before {
+    content: "";
+}
+
+.pin-poi::before {
+    content: "";
+}
+
+.ficon-breakfast::before {
+    content: "\F159";
+}
+
+.ficon-noti-check-mark-sharp::before {
+    content: "\F348";
+}
+
+.ficon-hotel-people-looking::before {
+    content: "\F291";
+}
+
+.ficon-free-welcome-drink::before {
+    content: "\F25C";
+}

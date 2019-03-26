@@ -1,29 +1,93 @@
-.sideBar-map {
-    height: 150px;
-}
-
-.sideBar-list {
-    display: flex;
-    margin-top: 5px;
-
-    .sideBar-list-img {
-        width: 50px;
-        height: 50px;
-        border-radius: 5px;
+.sideBar {
+    &-map {
+        height: 150px;
     }
 
-    .sideBar-list-text {
-        padding-left: 5px;
+    &-mes {
+        text-align: left;
+        margin: 15px 0 10px 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+    &-eatMorFree {
+        font-size: 12px;
+        display: flex;
+        background: #f3f9f2;
+        height: 65px;
+        margin-top: 15px;
+        align-items: center;
+        text-align: left;
+        cursor: pointer;
+
+        &-checkbox {
+            width: 40px;
+            cursor: pointer;
+        }
+
+        &-icon {
+            background:  #32a923;
+            border-radius: 50%;
+            width: 40px;
+            height: 35px;
+            margin-left: 10px;
+            padding-top: 5px;
+
+            .breakfast {
+                font-size: 25px;
+                margin-top: 5px;
+                color: white;
+            }
+        }
 
         p {
-            line-height: 0.5;
-            text-align: left;
-            font-size: 12px;
+            padding: 0 5px 0 5px;
+            color: #5a5b5b;
+            font-weight: 400;
         }
 
-        .sideBar-list-text-item {
-            color: #5392f9;
-            font-weight: 600;
+        &:hover {
+            p {
+                color: #75a8f9
+            }
+
+            &-checkbox {
+                outline-color: #75a8f9;
+            }
         }
     }
+
+    &-list {
+        display: flex;
+        margin-top: 5px;
+
+        &-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        &-text {
+            padding-left: 5px;
+
+            p {
+                line-height: 0.5;
+                text-align: left;
+                font-size: 12px;
+            }
+
+            &-item {
+                color: #5392f9;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+.side-bar-sticky {
+    position: fixed;
+    top: 0;
+    width: 270px;
 }

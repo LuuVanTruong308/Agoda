@@ -12,23 +12,44 @@ class SlideBarLeft extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sideBar">
         <div className="sideBar-map">
           <Map></Map>
         </div>
-        <div>
-          {this.LIST.map((item, index) =>
-            <div className="sideBar-list" key={index}>
-              <img className="sideBar-list-img" src={item.img} alt=""/>
-              <div className="sideBar-list-text">
-                <p className="sideBar-list-text-item">{item.name}</p>
-                <p>{item.number} nơi ở có phòng</p>
-              </div>
-            </div>
-          )}
+        <div className="sideBar-eatMorFree">
+          <div className="sideBar-eatMorFree-icon">
+            <i className="icon ficon-breakfast breakfast"></i>
+          </div>
+          <p>Xem những nơi ở có bữa ăn sáng miễn phí</p>
+          <input type="checkbox" className="sideBar-eatMorFree-checkbox"/>
         </div>
+        <div className="sideBar-mes">
+          {this.LIST.panelTitle}
+        </div>
+        {this.LIST.items.map((item, index) =>
+          <div className="sideBar-list" key={index}>
+            <img className="sideBar-list-img" src={item.imageUrl} alt={item.mainDescription}/>
+            <div className="sideBar-list-text">
+              <p className="sideBar-list-text-item">{item.cityName}</p>
+              <p>{item.secondaryDescription}</p>
+            </div>
+          </div>
+        )}
       </div>
     );
+  }
+
+  componentDidMount() {
+    var header = document.querySelector(".sideBar");
+    var sticky = header.offsetTop;
+
+    window.onscroll = function() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("side-bar-sticky");
+      } else {
+        header.classList.remove("side-bar-sticky");
+      }
+    }
   }
 
   componentWillMount() {

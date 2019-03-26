@@ -27,40 +27,49 @@ class HotelItemModal extends Component {
             map- {hotelModal.LocationFullText}
           </span>
         </div>
-        <div className="hotel-content-map">
-          {hotelModal.locationHighlightFeatures.PillList.slice(0,2).map(item => {
-              if(item.Name) return <span key={item.Id}>{item.Name}</span>
-              return <p></p>
+        { hotelModal.locationHighlightFeatures.PillList.filter(el => el.Name).length > 0 ?
+          <div className="hotel-content-map">
+            {hotelModal.locationHighlightFeatures.PillList.slice(0,2).map((item, index) => {
+                if(item.Name) return <span key={index}>{item.Name}</span>
+                return <p key={index}></p>
+              }
+            )}
+            {hotelModal.locationHighlightFeatures.PillList.length > 2 ?
+              <span>+</span> : ''
             }
-          )}
-          {hotelModal.locationHighlightFeatures.PillList.length > 2 ?
-            <span>+</span> :
-            <p></p>
-          }
-        </div>
-        <div className="hotel-content-option">
-          {hotelModal.Highlights.slice(0,2).map(item => {
-              if(item.title) return <span key={item.id}>{item.title}</span>
-              return <p></p>
+          </div> : ''
+        }
+        { hotelModal.Freebies ?
+          <div className="hotel-content-option">
+            { hotelModal.Freebies.PillList.slice(0, 2).map((item, index) => {
+                if(item.Name) return <span key={index}>{item.Name}</span>
+                return <p></p>
+              }
+            )}
+            {hotelModal.Freebies.PillList.length > 2 ?
+              <span>+{hotelModal.Freebies.PillList.slice(2, hotelModal.Freebies.PillList.length).length}</span> : ''
             }
-          )}
-          {hotelModal.Highlights.length > 2 ?
-            <span>+{hotelModal.Highlights.slice(2,hotelModal.Highlights.length).length}</span> :
-            <p></p>
-          }
-          <div className="tooltip">
-            <p>một số gói giá sẽ có</p>
-            <div>
-              
+            <div className="tooltip">
+              <p>{ hotelModal.Freebies.PillTooltipText }</p>
+              <div className="tooltip--list">
+                { hotelModal.Freebies.PillList.map((item, index) =>
+                  <div key={index}>
+                    <i className={`icon ficon ${item.Icon}`}></i>
+                    <span className="tooltip--list--title">{item.Name}</span>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="hotel-content-review">
-          <span>
-            <i className="fa fa-user"></i>
-            Được 100% khach hang gioi thieu
-          </span>
-        </div>
+          </div> : ''
+        }
+        { hotelModal.guestRecommended ?
+          <div className="hotel-content-review">
+            <div>
+              <i className={`icon ${hotelModal.guestRecommended.icon}`}></i>
+              {hotelModal.guestRecommended.text}
+            </div>
+          </div> : ''
+        }
         <div className="hotel-content-status">
           <span>
             Đang bán chạy!
