@@ -6,6 +6,7 @@
   &-review {
     display: flex;
     line-height: 12px;
+    justify-content: flex-end;
 
     .text-review {
       max-width: 110px;
@@ -33,6 +34,61 @@
   }
 
   .hotel-price-content {
-    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 75%;
+
+    .mes {
+      background: red;
+      font-size: 13px;
+      font-weight: 600;
+      color: white;
+      padding: 3px 5px 3px 5px;
+      margin-right: -20px;
+      border-radius: 3px;
+    }
+
+    .mes-sale {
+      color: #28871c;
+      font-size: 10px;
+      background: #d8eed5;
+      margin: 10px -20px 5px 75px;
+      padding: 3px 5px 3px 5px;
+      border-radius: 3px;
+    }
+
+    .title {
+      font-size: 10px;
+      color: #737373;
+    }
+
+    .crossed-out-price {
+      color: #737373;
+      font-size: 25px;
+      position: relative;
+    }
+
+    .crossed-out-price::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 100%;
+      border-top: 2px solid;
+      transform: rotate(-10deg)
+    }
+
+    .price-defaute {
+      font-size: 25px;
+
+      .price-number {
+        color: red;
+      }
+
+      .price-currency {
+        color: #737373;
+      }
+    }
   }
 }

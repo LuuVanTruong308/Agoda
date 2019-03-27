@@ -24,7 +24,7 @@ class Hotel extends Component {
         <div className="hotel--item">
           <Image listImage={hotelModal.galleryContainerProps} />
           <HotelItemModal hotelModal={hotelModal} />
-          <HotelPrice/>
+          <HotelPrice hotelModal={hotelModal}/>
       </div>
       </div>
     );

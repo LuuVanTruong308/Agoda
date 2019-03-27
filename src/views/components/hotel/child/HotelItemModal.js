@@ -12,19 +12,21 @@ class HotelItemModal extends Component {
     let { hotelModal }  = this.props
     return (
       <div className="holtel-content">
-        <div className="holtel-content-evaluate">
-          <span>
-            <i className="fa fa-user"></i>
-            Được các cặp đôi đánh giá cao
-          </span>
-        </div>
+        { hotelModal.UspSegment ?
+          <div className="holtel-content-evaluate">
+            <span>
+              <i className={`icon ${hotelModal.UspSegment.SegmentFontIcon}`}></i>
+              { hotelModal.UspSegment.TranslatedName }
+            </span>
+          </div> : ''
+        }
         <div className="hotel-content-name">
-          {hotelModal.EnglishHotelName}
+          { hotelModal.EnglishHotelName }
         </div>
         <div className="hotel-content-start">
           <i className="fa fa-user"></i>
           <span>
-            map- {hotelModal.LocationFullText}
+            { hotelModal.LocationFullText }
           </span>
         </div>
         { hotelModal.locationHighlightFeatures.PillList.filter(el => el.Name).length > 0 ?
@@ -70,14 +72,16 @@ class HotelItemModal extends Component {
             </div>
           </div> : ''
         }
-        <div className="hotel-content-status">
-          <span>
-            Đang bán chạy!
-          </span>
-          <p>
-            lan dat gan day nhat
-          </p>
-        </div>
+        { hotelModal.urgencyMessages.length !== 0 ?
+          <div className="hotel-content-status">
+            <span>
+              Đang bán chạy!
+            </span>
+            <p>
+              { hotelModal.urgencyMessages[0].text }
+            </p>
+          </div> : ''
+        }
         <div className="hotel-content-sale">
           <span>
             Khuyến mại hợp lệ
