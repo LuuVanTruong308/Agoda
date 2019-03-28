@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import './Filter.scss';
-import SlideBarLeft from '../slidebarLeft/SlideBarLeft'
-import Hotel from '../hotel/Hotel'
-import Suggestions from '../suggestions/Suggestions'
-import { connect } from 'react-redux'
-
-// import * as actions from '../../../redux/action/content'
-import * as actionsApi from '../../../redux/api/content'
+import SlideBarLeft from '../slidebarLeft/SlideBarLeft';
+import Hotel from '../hotel/Hotel';
+import Suggestions from '../suggestions/Suggestions';
+import { connect } from 'react-redux';
+import { TAB_FILTER } from './mock.js';
+import * as actionsApi from '../../../redux/api/content';
 
 class Filter extends Component {
   constructor() {
     super();
     this.state = {
       filter: 1,
+      loading: true,
     }
   }
 
@@ -20,25 +20,17 @@ class Filter extends Component {
     return (
       <div className="filter">
         <div className="filter--list-button">
-          <button
-            className={`filter-button ${this.state.filter === 1 ? 'filter-item' : ''}`}
-            onClick={() => this.actionFilter(1)}>
-            Mọi lựa chọn
-          </button>
-          <button
-            className={`filter-button ${this.state.filter === 2 ? 'filter-item' : ''}`}
-            onClick={() => this.actionFilter(2)}>
-            Khách sạn
-          </button>
-          <button
-            className={`filter-button ${this.state.filter === 3 ? 'filter-item' : ''}`}
-            onClick={() => this.actionFilter(3)}>
-            Agoda home
-          </button>
+          { TAB_FILTER.map(item =>
+            <button key={item.value}
+              className={`filter-button ${this.state.filter === item.value ? 'filter-item' : ''}`}
+              onClick={() => this.actionFilter(item.value)}>
+              { item.title }
+            </button>
+          )}
         </div>
         <div className="filter--list">
           <div className="filter--list--slide-bar" id="sticky">
-            <SlideBarLeft></SlideBarLeft>
+            <SlideBarLeft/>
           </div>
           <div className="filter--list--tab">
             <div className="filter-notify">
@@ -46,12 +38,12 @@ class Filter extends Component {
             <div className="filter-sort">
             </div>
             <div className="filter-list-item">
-              { this.props.listHotel.map((item) => {
-                return  <Hotel hotelModal={item} key={item.HotelID} />
-              })}
+              { this.props.listHotel.map((item) =>
+                <Hotel hotelModal={item} key={item.HotelID} />
+              )}
             </div>
             <div className="filter-list-item">
-              <Suggestions></Suggestions>
+              <Suggestions/>
             </div>
           </div>
         </div>
@@ -61,6 +53,7 @@ class Filter extends Component {
 
   componentWillMount() {
     this.props.dispatchGetList()
+    this.TAB_FILTER = TAB_FILTER
   }
 
   actionFilter = (value) => {
@@ -72,7 +65,7 @@ class Filter extends Component {
 
 const mapStateToProps = state => {
   return {
-    listHotel: state.myListHotel
+    listHotel: state.myListHotel.playload
   }
 }
 

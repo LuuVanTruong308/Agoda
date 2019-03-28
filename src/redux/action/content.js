@@ -1,9 +1,9 @@
 import * as types from '../constants/content'
 
-export const getlistHotel = (listHotel) => {
+export const getlistHotel = (playload) => {
     return {
         type: types.GET_LIST,
-        listHotel
+        playload
     }
 }
 

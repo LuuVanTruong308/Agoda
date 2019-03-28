@@ -1,11 +1,13 @@
 import * as types from '../constants/content'
 
-var listHotel = []
+var playload = []
+var map = {}
 
-var myListHotel = (state = listHotel, action) => {
+var myListHotel = (state = { playload, map }, action) => {
     switch(action.type) {
         case types.GET_LIST:
-            return state = [...action.listHotel]
+            state.playload = [...action.playload.ResultList]
+            return state = Object.assign({}, state)
         default: return state
     }
 }

@@ -6,15 +6,14 @@ import Map from '../../../../src/components/map'
 class SlideBarLeft extends Component {
   constructor() {
     super();
-    this.state = {
-    }
+    this.state = {}
   }
 
   render() {
     return (
       <div className="sideBar">
         <div className="sideBar-map">
-          <Map></Map>
+          <Map/>
         </div>
         <div className="sideBar-eatMorFree">
           <div className="sideBar-eatMorFree-icon">
