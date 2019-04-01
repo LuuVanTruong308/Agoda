@@ -1,0 +1,28 @@
+.sort {
+    display: flex;
+    font-size: 12px;
+    text-align: left;
+    color: #737373;
+    border: 1px solid #737373;
+    font-weight: 500;
+
+    &--title {
+        width: 10%;
+        padding: 10px;
+        background: #f7f7f7;
+    }
+
+    &--button {
+        text-transform: uppercase;
+        flex: 1;
+        border-left: 1px solid #737373;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    &--item {
+        background: #5392f9;
+        color: white;
+    }
+}

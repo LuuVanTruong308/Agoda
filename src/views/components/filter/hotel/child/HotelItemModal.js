@@ -15,7 +15,7 @@ class HotelItemModal extends Component {
         { hotelModal.UspSegment ?
           <div className="holtel-content-evaluate">
             <span>
-              <i className={`icon ${hotelModal.UspSegment.SegmentFontIcon}`}></i>
+            <i className={`icon ${hotelModal.UspSegment.SegmentFontIcon}`}></i>
               { hotelModal.UspSegment.TranslatedName }
             </span>
           </div> : ''
@@ -24,7 +24,8 @@ class HotelItemModal extends Component {
           { hotelModal.EnglishHotelName }
         </div>
         <div className="hotel-content-start">
-          <i className="fa fa-user"></i>
+          <i className={`icon ${hotelModal.StarRatingCss} ${hotelModal.StarRatingColor}`}></i>
+          <i className="fa fa-map-marker"></i>
           <span>
             { hotelModal.LocationFullText }
           </span>

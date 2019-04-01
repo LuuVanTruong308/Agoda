@@ -12,7 +12,7 @@ class Search extends Component {
   componentWillMount() {
     this.LIST_SEARCH = LIST_SEARCH
   }
-  
+
   render() {
     return (
       <div className="search">

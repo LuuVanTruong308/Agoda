@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './Filter.scss';
-import SlideBarLeft from '../slidebarLeft/SlideBarLeft';
-import Hotel from '../hotel/Hotel';
-import Suggestions from '../suggestions/Suggestions';
+import SlideBarLeft from './slidebarLeft/SlideBarLeft';
+import Hotel from './hotel/Hotel';
+import Suggestions from './suggestions/Suggestions';
+import Sort from './sort/Sort'
 import { connect } from 'react-redux';
 import { TAB_FILTER } from './mock.js';
 import * as actionsApi from '../../../redux/api/content';
@@ -11,7 +12,7 @@ class Filter extends Component {
   constructor() {
     super();
     this.state = {
-      filter: 1,
+      filter: -1,
       loading: true,
     }
   }
@@ -19,15 +20,17 @@ class Filter extends Component {
   render() {
     return (
       <div className="filter">
-        <div className="filter--list-button">
-          { TAB_FILTER.map(item =>
-            <button key={item.value}
-              className={`filter-button ${this.state.filter === item.value ? 'filter-item' : ''}`}
-              onClick={() => this.actionFilter(item.value)}>
-              { item.title }
-            </button>
-          )}
-        </div>
+        { this.props.listFilter.ProductType ?
+          <div className="filter--list-button">
+            { this.props.listFilter.ProductType.ItemList.map(item =>
+              <button key={item.Id}
+                className={`filter-button ${this.state.filter === item.Id ? 'filter-item' : ''}`}
+                onClick={() => this.actionFilter(item.Id)}>
+                { item.Name }
+              </button>
+            )}
+          </div> : ''
+        }
         <div className="filter--list">
           <div className="filter--list--slide-bar" id="sticky">
             <SlideBarLeft/>
@@ -36,11 +39,16 @@ class Filter extends Component {
             <div className="filter-notify">
             </div>
             <div className="filter-sort">
+              {
+                this.props.listSort.title ? <Sort sortModal={this.props.listSort}/> : ''
+              }
             </div>
             <div className="filter-list-item">
-              { this.props.listHotel.map((item) =>
-                <Hotel hotelModal={item} key={item.HotelID} />
-              )}
+              {
+                this.props.listHotel.map((item) =>
+                  <Hotel hotelModal={item} key={item.HotelID} />
+                )
+              }
             </div>
             <div className="filter-list-item">
               <Suggestions/>
@@ -65,7 +73,9 @@ class Filter extends Component {
 
 const mapStateToProps = state => {
   return {
-    listHotel: state.myListHotel.playload
+    listHotel: state.myListHotel.playload,
+    listFilter: state.myListHotel.listFilter,
+    listSort: state.myListHotel.listSort,
   }
 }
 

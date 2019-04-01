@@ -6,11 +6,11 @@
         display: flex;
 
         .filter-button {
-            padding: 23px 70px;
+            padding: 18px 70px;
             font-weight: 600;
             font-size: 14px;
             background: #f9f9fa;
-            border-width: 1px 0px 1px 1px;
+            border-width: 1px 0 1px 1px;
             outline: none;
             border-color: #dddfe2;
         }
@@ -50,6 +50,6 @@
     }
 
     @media ( min-width: 992px) and (max-width: 1200px){
-        max-width: 1100px;
+        max-width: 940px;
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './SlideBarLeft.scss';
 import { LIST } from './mock.js';
-import Map from '../../../../src/components/map'
+import Map from '../../../../components/map'
 
 class SlideBarLeft extends Component {
   constructor() {
@@ -17,7 +17,7 @@ class SlideBarLeft extends Component {
         </div>
         <div className="sideBar-eatMorFree">
           <div className="sideBar-eatMorFree-icon">
-            <i className="icon ficon-breakfast breakfast"></i>
+            <i className="icon ficon-cafe white"></i>
           </div>
           <p>Xem những nơi ở có bữa ăn sáng miễn phí</p>
           <input type="checkbox" className="sideBar-eatMorFree-checkbox"/>

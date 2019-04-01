@@ -5,30 +5,7 @@
 
 .icon::before {
     font-family: fontIcon;
-}
-
-.ficon-star-5::before {
-    content: "\F464";
-}
-
-.ficon-star-4::before {
-    content: "\F462";
-}
-
-.ficon-star-3::before {
-    content: "\F460";
-}
-
-.ficon-star-25::before {
-    content: "\F461";
-}
-
-.ficon-star-2::before {
-    content: "\F45E";
-}
-
-.ficon-star-1::before {
-    content: "\F45C";
+    font-weight: 400;
 }
 
 .ficon-air-conditioning::before {
@@ -73,4 +50,174 @@
 
 .ficon-price-drop::before {
     content: "\F38F"
+}
+
+.ficon-topic-hotel-highlight::before {
+    content: "\F492";
+}
+
+.ficon-agoda-homes::before {
+    content: "\F101";
+}
+
+.ficon-promotion-right::before {
+    content: "\F39A";
+}
+
+.ficon-hotel-star::before {
+    content: "\F293";
+}
+
+.ficon-neighborhood::before {
+    content: "\F338";
+}
+
+.ficon-solid-24hour-room-service::before {
+    content: "\F406";
+}
+
+.ficon-user::before {
+    content: "\F4B3";
+}
+
+.ficon-search-box::before {
+    content: "\F3D3";
+}
+
+.ficon-info-with-circle::before {
+    content: "\F2A6";
+}
+
+.ficon-hotel-people-looking::before {
+    content: "\F291";
+}
+
+.ficon-solid-breakfast::before {
+    content: "\F410";
+}
+
+.ficon-couple::before {
+    content: "\F1D7";
+}
+
+.ficon-star-5::before {
+    content: "\F464";
+}
+
+.star-5::before {
+    content: "\F464";
+}
+
+.ficon-star-4::before {
+    content: "\F462";
+}
+
+.star-4::before {
+    content: "\F462";
+}
+
+.ficon-star-45::before {
+    content: "\F463";
+}
+
+.star-45::before {
+    content: "\F463";
+}
+
+
+.ficon-star-3::before {
+    content: "\F460";
+}
+
+.star-3::before {
+    content: "\F460";
+}
+
+.ficon-star-35::before {
+    content: "\F461";
+}
+
+.star-35::before {
+    content: "\F461";
+}
+
+.ficon-star-2::before {
+    content: "\F45E";
+}
+
+.star-2::before {
+    content: "\F45E";
+}
+
+.ficon-star-25::before {
+    content: "\F45F";
+}
+
+.star-25::before {
+    content: "\F45F";
+}
+
+.ficon-star-1::before {
+    content: "\F45C";
+}
+
+.star-1::before {
+    content: "\F45C";
+}
+
+.ficon-star-15::before {
+    content: "\F45D";
+}
+
+.star-15::before {
+    content: "\F45D";
+}
+
+
+.ficon-circle-1::before {
+    content: "\F1A4";
+}
+
+.ficon-pin-star::before {
+    content: "\F37A";
+}
+
+.ficon-gca-wreath-left::before {
+    content: "\F264";
+}
+
+.ficon-gca-wreath-right::before {
+    content: "\F265";
+}
+
+.ficon-review-icon::before {
+    content: "\F3B5";
+}
+
+.ficon-negative::before {
+    content: "\F336";
+}
+
+.ficon-pin-star::before {
+    content: "\F37E"
+}
+
+.ficon-solid-couple-hover::before {
+    content: "\F414"
+}
+
+.ficon-cafe::before {
+    content: "\F410"
+}
+
+.star-orange {
+    color: #ffa726;
+}
+
+.orange-yellow {
+    color: #ffa726;
+}
+
+.pink {
+    color: #ff63a3;
 }

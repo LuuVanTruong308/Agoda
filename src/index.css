@@ -1,5 +1,6 @@
 @import './style/icon.scss';
-
+@import './style/variable.scss'
+;
 body {
   margin: 0;
   padding: 0;
