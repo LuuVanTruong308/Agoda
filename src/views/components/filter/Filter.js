@@ -3,6 +3,7 @@ import './Filter.scss';
 import SlideBarLeft from './slidebarLeft/SlideBarLeft';
 import Hotel from './hotel/Hotel';
 import Suggestions from './suggestions/Suggestions';
+import CountDown from '../../../components/countDown';
 import Sort from './sort/Sort'
 import { connect } from 'react-redux';
 import { TAB_FILTER } from './mock.js';
@@ -37,6 +38,7 @@ class Filter extends Component {
           </div>
           <div className="filter--list--tab">
             <div className="filter-notify">
+              <CountDown/>
             </div>
             <div className="filter-sort">
               {
